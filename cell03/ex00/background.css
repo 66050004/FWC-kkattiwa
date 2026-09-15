@@ -1,0 +1,24 @@
+body {
+margin: 0;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: background-color 0.4s ease;
+}
+
+button {
+padding: 15px 30px;
+font-size: 18px;
+font-weight: bold;
+color: #4a4a4a;
+background-color: #ffffff;
+border: 2px solid #FFBBDA;
+border-radius: 25px;
+cursor: pointer;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+button:hover {
+background-color: #FFF5BA;
+}
