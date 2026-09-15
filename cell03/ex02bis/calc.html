@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>It is over 9000 Bis</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<style>
+    body { margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #FFF5BA; font-family: Arial; }
+    .calculator { background: #fff; padding: 30px; border-radius: 20px; display: flex; gap: 10px; }
+    input, select { padding: 10px; border: 2px solid #C0E4F6; border-radius: 10px; text-align: center; }
+    input[type="submit"] { background: #FFBBDA; border: none; font-weight: bold; cursor: pointer; }
+</style>
+</head>
+<body>
+<form class="calculator" id="calcForm">
+    <input type="text" id="leftNum">
+    <select id="operator">
+        <option value="+">+</option><option value="-">-</option><option value="*">*</option><option value="/">/</option><option value="%">%</option>
+    </select>
+    <input type="text" id="rightNum">
+    <input type="submit" value="Try me!">
+</form>
+<script>
+    $(document).ready(function() {
+        function isValid(v) { return /^\d+$/.test(v); }
+        $("#calcForm").submit(function(e) {
+            e.preventDefault();
+            const l = $("#leftNum").val().trim(), r = $("#rightNum").val().trim(), op = $("#operator").val();
+            if (!isValid(l) || !isValid(r)) { alert("Error :("); return; }
+            const n1 = parseInt(l, 10), n2 = parseInt(r, 10);
+            if ((op === "/" || op === "%") && n2 === 0) { alert("It's over 9000!"); console.log("It's over 9000!"); return; }
+            let res = eval(n1 + " " + op + " " + n2);
+            alert(res); console.log(res);
+        });
+        setInterval(function() { alert("Please, use me..."); }, 30000);
+    });
+</script>
+</body>
+</html>

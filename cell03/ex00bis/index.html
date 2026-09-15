@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Random Background Bis</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<style>
+    body { margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #FFF5BA; }
+    button { padding: 15px 30px; font-size: 18px; font-weight: bold; color: #4a4a4a; background-color: #FFBBDA; border: none; border-radius: 25px; cursor: pointer; }
+</style>
+</head>
+<body>
+<button id="bgBtn">Click me!</button>
+<script>
+    $(document).ready(function() {
+        $("#bgBtn").click(function() {
+            const col = "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, "0");
+            $("body").css("background-color", col);
+        });
+    });
+</script>
+</body>
+</html>
